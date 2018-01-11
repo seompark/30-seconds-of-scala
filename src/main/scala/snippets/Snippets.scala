@@ -7,7 +7,7 @@ object Snippets {
       * @return gcd of Seq of numbers
       */
     def gcdSeq(numbers: Seq[Int]): Int = {
-      numbers reduce { gcd }
+      numbers reduce gcd
     }
 
     /**
@@ -20,7 +20,7 @@ object Snippets {
             val g = gcd(a, b)
             if (g == 0) 0 else a * b / g
         }
-        numbers reduce { lcm }
+        numbers reduce lcm
     }
 
     /**
