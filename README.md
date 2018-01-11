@@ -1,4 +1,4 @@
-# little scala functions [![Build Status](https://travis-ci.org/a1p4ca/little-java-functions.svg?branch=master)](https://travis-ci.org/a1p4ca/little-java-functions)
+# little scala functions [![Build Status](https://travis-ci.org/a1p4ca/little-scala-functions.svg?branch=master)](https://travis-ci.org/a1p4ca/little-scala-functions)
 > Curated collection of useful little scala functions that you can understand quickly
 
 ## Table of Contents
