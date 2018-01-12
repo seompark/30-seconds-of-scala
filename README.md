@@ -8,8 +8,8 @@
 <details>
 <summary>View contents</summary>
 
-* [`gcdSeq`](#gcdSeq)
-* [`lcmSeq`](#lcmSeq)
+* [`gcdSeq`](#gcdseq)
+* [`lcmSeq`](#lcmseq)
 
 </details>
 
