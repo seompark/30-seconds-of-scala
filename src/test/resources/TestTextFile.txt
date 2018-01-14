@@ -1,0 +1,4 @@
+Hello, this is test file.
+I love javascript, scala, and functional programming.
+I'm a highschool student in Korea.
+Thank you so much.

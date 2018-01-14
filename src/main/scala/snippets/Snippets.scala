@@ -1,5 +1,10 @@
 package snippets
 
+import java.io.{File, InputStream}
+
+import scala.io.Source
+
+
 object Snippets {
     /**
       * Calculates the greatest common denominator (gcd) of a Seq of numbers
@@ -22,4 +27,18 @@ object Snippets {
     }
 
     def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
+
+    /**
+      * Converts InputStream to String.
+      * @param is
+      * @return string from InputStream.
+      */
+    def convertInputStreamToString(is: InputStream): String = Source.fromInputStream(is).mkString
+
+    /**
+      * Reads string from file.
+      * @param file
+      * @return string from file.
+      */
+    def readFileAsString(file: File): String = Source.fromFile(file).getLines.mkString
 }

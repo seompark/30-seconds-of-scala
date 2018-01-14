@@ -13,6 +13,16 @@
 
 </details>
 
+### I/O
+
+<details>
+<summary>View contents</summary>
+
+* [`convertInputStreamToString`](#convertinputstreamtostring)
+* [`readFileAsString`](#readfileasstring)
+
+</details>
+
 ---
 
 ## Math
@@ -41,10 +51,28 @@ def lcmSeq(numbers: Seq[Int]): Int = {
 }
 ```
 
+## I/O
+
+### convertInputStreamToString
+
+Converts InputStream to String.
+
+```scala
+def convertInputStreamToString(is: InputStream): String = Source.fromInputStream(is).mkString
+```
+
+### readFileAsString
+
+Reads string from file.
+
+```scala
+def readFileAsString(file: File): String = Source.fromFile(file).getLines.mkString
+```
+
 ## Thanks
 
 This project is inspired by shekhargulati's [little-java-functions](https://github.com/shekhargulati/little-java-functions).
-And his project is started as a Java fork of [30-seconds-of-code](https://github.com/Chalarangelo/30-seconds-of-code)
+And his project is started as a Java fork of [30-seconds-of-code](https://github.com/Chalarangelo/30-seconds-of-code).
 
 I'm planning to start implementing functions in little-java-functions project in Scala style.
 After that, I'll write my own functions. This project is just for my study and welcome PR and Issue for my bad implementation.
