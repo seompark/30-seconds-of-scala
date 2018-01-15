@@ -41,4 +41,22 @@ object Snippets {
       * @return string from file.
       */
     def readFileAsString(file: File): String = Source.fromFile(file).getLines.mkString
+
+    /**
+      * Compute the bionomial coefficient, n C k.
+      * @param n
+      * @param k
+      * @return
+      */
+    def binomialCoefficient(n: Int, k: Int): Int = {
+        if (k < 0 || k > n) return 0
+        if ((k equals 0) || (k equals n)) return 1
+
+        val j = k min (n - k)
+        var c = 1
+
+        for (i <- 0 until j)
+            c = c * (n - i) / (i + 1)
+        c
+    }
 }

@@ -10,6 +10,7 @@
 
 * [`gcdSeq`](#gcdseq)
 * [`lcmSeq`](#lcmseq)
+* [`binomialCoefficient`](#binomialcoefficient)
 
 </details>
 
@@ -48,6 +49,23 @@ def lcmSeq(numbers: Seq[Int]): Int = {
         if (g == 0) 0 else a * b / g
     }
     numbers reduce lcm
+}
+```
+
+### binomialCoefficient
+
+Compute the bionomial coefficient, n C k.
+
+```scala
+def binomialCoefficient(n: Int, k: Int): Int = {
+    if (k < 0 || k > n) return 0
+    if ((k == 0) || (k == n)) return 1
+
+    val j = k min (n - k)
+    var c = 1
+
+    for (i <- 0 until j) c = c * (n - i) / (i + 1)
+    c
 }
 ```
 

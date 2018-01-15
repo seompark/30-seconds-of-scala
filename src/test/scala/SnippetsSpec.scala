@@ -54,4 +54,17 @@ class SnippetsSpec extends FlatSpec with Matchers {
 
         Snippets.readFileAsString(input) shouldEqual answer
     }
+
+    "binomialCoefficient" should "returns bionomial coefficient." in {
+        val cases = List (
+            (0, 0) -> 1,
+            (5, 3) -> 10,
+            (12, 7) -> 792,
+            (4, 3) -> 4,
+            (4, 2) -> 6
+        )
+        cases test { (input: (Int, Int), answer: Int) =>
+            Snippets.binomialCoefficient _ tupled input shouldEqual answer
+        }
+    }
 }
