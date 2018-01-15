@@ -54,7 +54,7 @@ def lcmSeq(numbers: Seq[Int]): Int = {
 
 ### binomialCoefficient
 
-Compute the bionomial coefficient, n C k.
+Compute the [`bionomial coefficient`](https://en.wikipedia.org/wiki/Binomial_coefficient), n C k.
 
 ```scala
 def binomialCoefficient(n: Int, k: Int): Int = {
