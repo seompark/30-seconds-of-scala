@@ -3,6 +3,15 @@
 
 ## Table of Contents
 
+### Array
+
+<details>
+<summary>View contents</summary>
+
+* [`indexOf`](#indexof)
+
+</details>
+
 ### Math
 
 <details>
@@ -25,6 +34,19 @@
 </details>
 
 ---
+
+## Array
+
+### indexOf
+
+Find first index of element in the Seq.
+
+```scala
+def indexOf[T](elements: Seq[T], el: T): Option[Int] = {
+    val indexes = for ((v, i) <- elements.zipWithIndex if v equals el) yield Some(i)
+    if(indexes.isEmpty) None else indexes.head
+}
+```
 
 ## Math
 

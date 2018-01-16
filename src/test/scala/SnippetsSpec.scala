@@ -67,4 +67,16 @@ class SnippetsSpec extends FlatSpec with Matchers {
             Snippets.binomialCoefficient _ tupled input shouldEqual answer
         }
     }
+
+    "indexOf" should "find index of element in the Seq." in {
+        val cases = Seq(
+            (Seq(2, 3, 5, 9), 3) -> Some(1),
+            (Seq(9, 1, 2, 3), 2) -> Some(2),
+            (Seq(0, 0, 1, 1), 1) -> Some(2), // should returns first index that is found in List.
+            (Seq(1, 9, 7, 2), 3) -> None // should returns None if element not found.
+        )
+        cases test { (input: (Seq[Int], Int), answer: Option[Int]) =>
+            Snippets.indexOf _ tupled input shouldEqual answer
+        }
+    }
 }

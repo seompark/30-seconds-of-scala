@@ -59,4 +59,16 @@ object Snippets {
             c = c * (n - i) / (i + 1)
         c
     }
+
+    /**
+      * Find first index of element in the Seq.
+      * @param elements
+      * @param el
+      * @tparam T
+      * @return Option of Index of element which is found in Seq.
+      */
+    def indexOf[T](elements: Seq[T], el: T): Option[Int] = {
+        val indexes = for ((v, i) <- elements.zipWithIndex if v equals el) yield Some(i)
+        if(indexes.isEmpty) None else indexes.head
+    }
 }
