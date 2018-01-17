@@ -3,23 +3,22 @@ package snippets
 import java.io.{File, InputStream}
 
 import scala.io.Source
-import scala.reflect.ClassTag
 
 
 object Snippets {
     /**
-      * Calculates the greatest common denominator (gcd) of a Seq of numbers
-      * @param numbers Seq of numbers
-      * @return gcd of Seq of numbers
+      * Calculates the greatest common denominator (gcd) of a List of numbers
+      * @param numbers List of numbers
+      * @return gcd of List of numbers
       */
-    def gcdSeq(numbers: Seq[Int]): Int = numbers reduce gcd
+    def gcdList(numbers: List[Int]): Int = numbers reduce gcd
 
     /**
       * Calculates the lowest common multiple (lcm) of an array of numbers.
-      * @param numbers Seq of numbers
-      * @return lcm of Seq of numbers
+      * @param numbers List of numbers
+      * @return lcm of List of numbers
       */
-    def lcmSeq(numbers: Seq[Int]): Int = {
+    def lcmList(numbers: List[Int]): Int = {
         def lcm(a: Int, b: Int) = {
             val g = gcd(a, b)
             if (g == 0) 0 else a * b / g
@@ -62,13 +61,13 @@ object Snippets {
     }
 
     /**
-      * Find first index of element in the Seq.
+      * Find first index of element in the List.
       * @param elements
       * @param el
       * @tparam T
-      * @return Option of Index of element which is found in Seq.
+      * @return Option of Index of element which is found in List.
       */
-    def indexOf[T](elements: Seq[T], el: T): Option[Int] = {
+    def indexOf[T](elements: List[T], el: T): Option[Int] = {
         val indexes = for ((v, i) <- elements.zipWithIndex if v equals el) yield Some(i)
         if(indexes.isEmpty) None else indexes.head
     }

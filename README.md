@@ -18,8 +18,8 @@
 <details>
 <summary>View contents</summary>
 
-* [`gcdSeq`](#gcdseq)
-* [`lcmSeq`](#lcmseq)
+* [`gcdList`](#gcdList)
+* [`lcmList`](#lcmList)
 * [`binomialCoefficient`](#binomialcoefficient)
 
 </details>
@@ -51,10 +51,10 @@ def chunk[T](elements: List[T], size: Int): List[List[T]] = {
 
 ### indexOf
 
-Find first index of element in the Seq.
+Find first index of element in the List.
 
 ```scala
-def indexOf[T](elements: Seq[T], el: T): Option[Int] = {
+def indexOf[T](elements: List[T], el: T): Option[Int] = {
     val indexes = for ((v, i) <- elements.zipWithIndex if v equals el) yield Some(i)
     if(indexes.isEmpty) None else indexes.head
 }
@@ -62,22 +62,22 @@ def indexOf[T](elements: Seq[T], el: T): Option[Int] = {
 
 ## Math
 
-### gcdSeq
+### gcdList
 
-Calculates the greatest common denominator (gcd) of an Seq of numbers.
+Calculates the greatest common denominator (gcd) of an List of numbers.
 
 ```scala
-def gcdSeq(numbers: Seq[Int]): Int = numbers reduce gcd
+def gcdList(numbers: List[Int]): Int = numbers reduce gcd
 
 def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 ```
 
-### lcmSeq
+### lcmList
 
 Calculates the lowest common multiple (lcm) of an array of numbers.
 
 ```scala
-def lcmSeq(numbers: Seq[Int]): Int = {
+def lcmList(numbers: List[Int]): Int = {
     def lcm(a: Int, b: Int) = {
         val g = gcd(a, b)
         if (g == 0) 0 else a * b / g
