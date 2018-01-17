@@ -3,6 +3,7 @@ package snippets
 import java.io.{File, InputStream}
 
 import scala.io.Source
+import scala.reflect.ClassTag
 
 
 object Snippets {
@@ -70,5 +71,17 @@ object Snippets {
     def indexOf[T](elements: Seq[T], el: T): Option[Int] = {
         val indexes = for ((v, i) <- elements.zipWithIndex if v equals el) yield Some(i)
         if(indexes.isEmpty) None else indexes.head
+    }
+
+    /**
+      * Chunks an List into smaller List of specified size.
+      * @param elements
+      * @param size
+      * @tparam T
+      * @return
+      */
+    def chunk[T](elements: List[T], size: Int): List[List[T]] = {
+        if (elements.lengthCompare(size) <= 0) elements :: Nil
+        else (elements take size) :: chunk(elements drop size, size)
     }
 }

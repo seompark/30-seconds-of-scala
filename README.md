@@ -8,6 +8,7 @@
 <details>
 <summary>View contents</summary>
 
+* [`chunk`](#chunk)
 * [`indexOf`](#indexof)
 
 </details>
@@ -36,6 +37,17 @@
 ---
 
 ## Array
+
+### chunk
+
+Chunks an List into smaller List of specified size.
+
+```scala
+def chunk[T](elements: List[T], size: Int): List[List[T]] = {
+    if (elements.lengthCompare(size) <= 0) elements :: Nil
+    else (elements take size) :: chunk(elements drop size, size)
+}
+```
 
 ### indexOf
 

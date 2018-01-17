@@ -79,4 +79,15 @@ class SnippetsSpec extends FlatSpec with Matchers {
             Snippets.indexOf _ tupled input shouldEqual answer
         }
     }
+
+    "chunk" should "breaks into array with given length." in {
+        val cases = Seq(
+            (List(1, 3, 5, 8, "hello"), 2) -> List(List(1, 3), List(5, 8), List("hello")),
+            (List(1, 3, 5, 8, 11), 3) -> List(List(1, 3, 5), List(8, 11)),
+            (List(1, 3, 5, 8, "hi", 20), 2) -> List(List(1, 3), List(5, 8), List("hi", 20))
+        )
+        cases test { (input: (List[Any], Int), answer: List[List[Any]]) =>
+            Snippets.chunk[Any] _ tupled input shouldEqual answer
+        }
+    }
 }
