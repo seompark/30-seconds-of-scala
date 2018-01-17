@@ -81,7 +81,7 @@ Compute the [`bionomial coefficient`](https://en.wikipedia.org/wiki/Binomial_coe
 ```scala
 def binomialCoefficient(n: Int, k: Int): Int = {
     if (k < 0 || k > n) return 0
-    if ((k == 0) || (k == n)) return 1
+    if (k == 0 || k == n) return 1
 
     val j = k min (n - k)
     var c = 1

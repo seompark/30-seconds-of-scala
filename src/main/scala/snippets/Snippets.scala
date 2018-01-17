@@ -50,7 +50,7 @@ object Snippets {
       */
     def binomialCoefficient(n: Int, k: Int): Int = {
         if (k < 0 || k > n) return 0
-        if ((k equals 0) || (k equals n)) return 1
+        if (k == 0 || k == n) return 1
 
         val j = k min (n - k)
         var c = 1
