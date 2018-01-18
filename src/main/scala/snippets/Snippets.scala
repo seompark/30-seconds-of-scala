@@ -4,7 +4,6 @@ import java.io.{File, InputStream}
 
 import scala.io.Source
 
-
 object Snippets {
     /**
       * Calculates the greatest common denominator (gcd) of a List of numbers
@@ -62,25 +61,25 @@ object Snippets {
 
     /**
       * Find first index of element in the List.
-      * @param elements
+      * @param xs
       * @param el
       * @tparam T
       * @return Option of Index of element which is found in List.
       */
-    def indexOf[T](elements: List[T], el: T): Option[Int] = {
-        val indexes = for ((v, i) <- elements.zipWithIndex if v equals el) yield Some(i)
+    def indexOf[T](xs: List[T], el: T): Option[Int] = {
+        val indexes = for ((v, i) <- xs.zipWithIndex if v equals el) yield Some(i)
         if(indexes.isEmpty) None else indexes.head
     }
 
     /**
       * Chunks an List into smaller List of specified size.
-      * @param elements
+      * @param xs
       * @param size
       * @tparam T
       * @return
       */
-    def chunk[T](elements: List[T], size: Int): List[List[T]] = {
-        if (elements.lengthCompare(size) <= 0) elements :: Nil
-        else (elements take size) :: chunk(elements drop size, size)
+    def chunk[T](xs: List[T], size: Int): List[List[T]] = {
+        if (xs.lengthCompare(size) <= 0) xs :: Nil
+        else (xs take size) :: chunk(xs drop size, size)
     }
 }
