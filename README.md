@@ -43,9 +43,9 @@
 Chunks an List into smaller List of specified size.
 
 ```scala
-def chunk[T](elements: List[T], size: Int): List[List[T]] = {
-    if (elements.lengthCompare(size) <= 0) elements :: Nil
-    else (elements take size) :: chunk(elements drop size, size)
+def chunk[T](xs: List[T], size: Int): List[List[T]] = {
+    if (xs.lengthCompare(size) <= 0) xs :: Nil
+    else (xs take size) :: chunk(xs drop size, size)
 }
 ```
 
@@ -54,8 +54,8 @@ def chunk[T](elements: List[T], size: Int): List[List[T]] = {
 Find first index of element in the List.
 
 ```scala
-def indexOf[T](elements: List[T], el: T): Option[Int] = {
-    val indexes = for ((v, i) <- elements.zipWithIndex if v equals el) yield Some(i)
+def indexOf[T](xs: List[T], el: T): Option[Int] = {
+    val indexes = for ((v, i) <- xs.zipWithIndex if v equals el) yield Some(i)
     if(indexes.isEmpty) None else indexes.head
 }
 ```
