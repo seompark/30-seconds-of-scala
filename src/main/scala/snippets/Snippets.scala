@@ -6,18 +6,18 @@ import scala.io.Source
 
 object Snippets {
     /**
-      * Calculates the greatest common denominator (gcd) of a List of numbers
-      * @param numbers List of numbers
-      * @return gcd of List of numbers
+      * Calculates the greatest common denominator (gcd) of a Vector of numbers
+      * @param numbers Vector of numbers
+      * @return gcd of Vector of numbers
       */
-    def gcdList(numbers: List[Int]): Int = numbers reduce gcd
+    def gcd(numbers: Vector[Int]): Int = numbers reduce gcd
 
     /**
       * Calculates the lowest common multiple (lcm) of an array of numbers.
-      * @param numbers List of numbers
-      * @return lcm of List of numbers
+      * @param numbers Vector of numbers
+      * @return lcm of Vector of numbers
       */
-    def lcmList(numbers: List[Int]): Int = {
+    def lcm(numbers: Vector[Int]): Int = {
         def lcm(a: Int, b: Int) = {
             val g = gcd(a, b)
             if (g == 0) 0 else a * b / g
@@ -60,26 +60,26 @@ object Snippets {
     }
 
     /**
-      * Find first index of element in the List.
+      * Find first index of element in the Vector.
       * @param xs
       * @param el
       * @tparam T
-      * @return Option of Index of element which is found in List.
+      * @return Option of Index of element which is found in Vector.
       */
-    def indexOf[T](xs: List[T], el: T): Option[Int] = {
+    def indexOf[T](xs: Vector[T], el: T): Option[Int] = {
         val indexes = for ((v, i) <- xs.zipWithIndex if v equals el) yield Some(i)
         if(indexes.isEmpty) None else indexes.head
     }
 
     /**
-      * Chunks an List into smaller List of specified size.
+      * Chunks an Vector into smaller Vector of specified size.
       * @param xs
       * @param size
       * @tparam T
       * @return
       */
-    def chunk[T](xs: List[T], size: Int): List[List[T]] = {
-        if (xs.lengthCompare(size) <= 0) xs :: Nil
-        else (xs take size) :: chunk(xs drop size, size)
+    def chunk[T](xs: Vector[T], size: Int): Vector[Vector[T]] = {
+        if (xs.lengthCompare(size) <= 0) xs +: Vector()
+        else (xs take size) +: chunk(xs drop size, size)
     }
 }

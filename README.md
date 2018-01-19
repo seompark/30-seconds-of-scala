@@ -18,8 +18,8 @@
 <details>
 <summary>View contents</summary>
 
-* [`gcdList`](#gcdList)
-* [`lcmList`](#lcmList)
+* [`gcd`](#gcd)
+* [`lcm`](#gcd)
 * [`binomialCoefficient`](#binomialcoefficient)
 
 </details>
@@ -40,21 +40,21 @@
 
 ### chunk
 
-Chunks an List into smaller List of specified size.
+Chunks an Vector into smaller Vector of specified size.
 
 ```scala
-def chunk[T](xs: List[T], size: Int): List[List[T]] = {
-    if (xs.lengthCompare(size) <= 0) xs :: Nil
-    else (xs take size) :: chunk(xs drop size, size)
+def chunk[T](xs: Vector[T], size: Int): Vector[Vector[T]] = {
+    if (xs.lengthCompare(size) <= 0) xs +: Vector()
+    else (xs take size) +: chunk(xs drop size, size)
 }
 ```
 
 ### indexOf
 
-Find first index of element in the List.
+Find first index of element in the Vector.
 
 ```scala
-def indexOf[T](xs: List[T], el: T): Option[Int] = {
+def indexOf[T](xs: Vector[T], el: T): Option[Int] = {
     val indexes = for ((v, i) <- xs.zipWithIndex if v equals el) yield Some(i)
     if(indexes.isEmpty) None else indexes.head
 }
@@ -62,22 +62,22 @@ def indexOf[T](xs: List[T], el: T): Option[Int] = {
 
 ## Math
 
-### gcdList
+### gcd
 
-Calculates the greatest common denominator (gcd) of an List of numbers.
+Calculates the greatest common denominator (gcd) of an Vector of numbers.
 
 ```scala
-def gcdList(numbers: List[Int]): Int = numbers reduce gcd
+def gcd(numbers: Vector[Int]): Int = numbers reduce gcd
 
 def gcd(a: Int, b: Int): Int = if (b == 0) a else gcd(b, a % b)
 ```
 
-### lcmList
+### lcm
 
 Calculates the lowest common multiple (lcm) of an array of numbers.
 
 ```scala
-def lcmList(numbers: List[Int]): Int = {
+def lcm(numbers: Vector[Int]): Int = {
     def lcm(a: Int, b: Int) = {
         val g = gcd(a, b)
         if (g == 0) 0 else a * b / g
