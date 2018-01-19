@@ -18,7 +18,7 @@ class SnippetsSpec extends FlatSpec with Matchers {
             Vector(16833, 9593, 9231, 31132) -> 181
         )
         cases test { (input: Vector[Int], answer: Int) =>
-            Snippets.gcdVector(input) shouldEqual answer
+            Snippets.gcd(input) shouldEqual answer
         }
     }
     "lcdVector" should "returns the lowest common multiple of a Vector of numbers." in {
@@ -29,7 +29,7 @@ class SnippetsSpec extends FlatSpec with Matchers {
             Vector(128, 291, 491) -> 18288768
         )
         cases test { (input: Vector[Int], answer: Int) =>
-            Snippets.lcmVector(input) shouldEqual answer
+            Snippets.lcm(input) shouldEqual answer
         }
     }
     "convertInputStreamToString" should "returns String from InputStream." in {
