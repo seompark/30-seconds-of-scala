@@ -1,4 +1,4 @@
-# little scala functions [![Build Status](https://travis-ci.org/a1p4ca/little-scala-functions.svg?branch=master)](https://travis-ci.org/a1p4ca/little-scala-functions)
+# 30-seconds-of-scala [![Build Status](https://travis-ci.org/a1p4ca/30-seconds-of-scala.svg?branch=master)](https://travis-ci.org/a1p4ca/30-seconds-of-scala)
 > Curated collection of useful little scala functions that you can understand quickly.
 
 ## Table of Contents
